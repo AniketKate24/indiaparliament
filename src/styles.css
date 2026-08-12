@@ -163,3 +163,19 @@
     color: var(--color-foreground);
   }
 }
+
+@utility tricolor-band {
+  background: linear-gradient(
+    to bottom,
+    var(--saffron) 0 33.333%,
+    oklch(1 0 0) 33.333% 66.666%,
+    var(--verdant) 66.666% 100%
+  );
+}
+
+@utility chakra-ring {
+  border-radius: 9999px;
+  border: 2px solid var(--primary);
+  background:
+    repeating-conic-gradient(var(--primary) 0deg 1.5deg, transparent 1.5deg 15deg);
+}
