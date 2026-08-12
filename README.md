@@ -4,7 +4,7 @@ Create a comprehensive parliamentary board directory for India that maps all cur
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://indian-parliament.lovable.app/
+**Live app**: https://indian-parliament.lovable.app
 
 ## Build with Lovable
 
