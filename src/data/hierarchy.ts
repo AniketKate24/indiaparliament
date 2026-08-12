@@ -519,5 +519,8 @@ export const constitutionTree: TreeNode = {
         },
       ],
     },
+    stateLevel,
+    localGovernment,
   ],
+
 };
