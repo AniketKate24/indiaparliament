@@ -175,7 +175,7 @@
 
 @utility chakra-ring {
   border-radius: 9999px;
-  border: 2px solid var(--primary);
+  border: 2px solid currentColor;
   background:
-    repeating-conic-gradient(var(--primary) 0deg 1.5deg, transparent 1.5deg 15deg);
+    repeating-conic-gradient(currentColor 0deg 1.5deg, transparent 1.5deg 15deg);
 }
