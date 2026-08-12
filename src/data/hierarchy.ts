@@ -392,10 +392,11 @@ const localGovernment: TreeNode = {
 export const constitutionTree: TreeNode = {
 
   id: "constitution",
-  label: "Constitution of India",
+  label: "Republic of India — Constitution of India",
   sublabel: "Supreme law — in force since 26 January 1950",
   detail:
-    "Part V of the Constitution constitutes the Union. Every parliamentary office below derives its existence, powers and tenure from a specific article.",
+    "The Constitution distributes authority across three tiers: the Union (Part V), the States (Part VI) and local self-government (Parts IX and IX-A). Every office below derives its existence, powers and tenure from a specific article.",
+
   sources: [
     {
       type: "Official",
