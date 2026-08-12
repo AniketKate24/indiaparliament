@@ -77,11 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Parliament of India Directory — Lok Sabha & Rajya Sabha" },
+      {
+        name: "description",
+        content:
+          "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
+      },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Parliament of India Directory — Lok Sabha & Rajya Sabha" },
+      {
+        property: "og:description",
+        content:
+          "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
