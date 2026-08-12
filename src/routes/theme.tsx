@@ -4,13 +4,13 @@ import { Chakra } from "@/components/brand/Chakra";
 export const Route = createFileRoute("/theme")({
   head: () => ({
     meta: [
-      { title: "Tiranga Theme Specification — Indian Flag Design System" },
+      { title: "Tiranga Theme — Parliament of India Directory" },
       {
         name: "description",
         content:
-          "A complete Indian flag design system: saffron, white, India green and Ashoka Chakra navy tokens, typography, layout bands, components, accessibility ratios and Flag Code guidance.",
+          "Tiranga design system for the Parliament of India Directory: saffron, white, India green and Ashoka Chakra navy tokens, typography, components and accessibility ratios.",
       },
-      { property: "og:title", content: "Tiranga Theme Specification" },
+      { property: "og:title", content: "Tiranga Theme — Parliament of India Directory" },
       {
         property: "og:description",
         content:
