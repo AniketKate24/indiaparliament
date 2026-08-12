@@ -186,6 +186,8 @@ function Directory() {
           </div>
           {tab === "directory" && (
             <input
+              type="search"
+              aria-label="Search members by name, role or party"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search name, role or party…"
