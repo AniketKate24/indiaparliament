@@ -31,7 +31,7 @@ const appointmentTone: Record<string, string> = {
   "Ex officio": "bg-muted text-muted-foreground border-border",
 };
 
-function Tag({ children, tone }: { children: React.ReactNode; tone?: string }) {
+function Tag({ children, tone }: { children: React.ReactNode; tone?: string | undefined }) {
   return (
     <span
       className={`inline-block whitespace-nowrap rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${
