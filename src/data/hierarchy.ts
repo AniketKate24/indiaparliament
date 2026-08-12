@@ -467,8 +467,10 @@ export const constitutionTree: TreeNode = {
                 },
               ],
             },
+            councilOfMinisters,
           ],
         },
+
         {
           id: "parliament",
           label: "Chapter II — Parliament of India (Sansad)",
