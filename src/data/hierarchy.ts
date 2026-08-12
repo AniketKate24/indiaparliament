@@ -153,7 +153,244 @@ const rsBenches: TreeNode = {
   ],
 };
 
+const MHA: Source = {
+  type: "Official",
+  label: "mha.gov.in — Union Ministry of Home Affairs",
+  url: "https://www.mha.gov.in/",
+};
+const PANCHAYATI_RAJ: Source = {
+  type: "Official",
+  label: "panchayat.gov.in — Ministry of Panchayati Raj",
+  url: "https://panchayat.gov.in/",
+};
+const MOHUA: Source = {
+  type: "Official",
+  label: "mohua.gov.in — Ministry of Housing and Urban Affairs",
+  url: "https://mohua.gov.in/",
+};
+const PMINDIA: Source = {
+  type: "Official",
+  label: "pmindia.gov.in — Prime Minister's Office",
+  url: "https://www.pmindia.gov.in/",
+};
+
+const councilOfMinisters: TreeNode = {
+  id: "council-of-ministers",
+  label: "Prime Minister and the Union Council of Ministers",
+  article: "Articles 74–75",
+  detail:
+    "The Council of Ministers, with the Prime Minister at its head, aids and advises the President, who acts on that advice. Ministers are collectively responsible to the Lok Sabha.",
+  sources: [PMINDIA],
+  children: [
+    {
+      id: "pm-holder",
+      label: "Narendra Damodardas Modi",
+      sublabel: "Prime Minister of India",
+      member: {
+        name: "Narendra Damodardas Modi",
+        title: "Prime Minister of India; head of the Union Council of Ministers",
+        party: "Bharatiya Janata Party",
+        constituency: "Varanasi, Uttar Pradesh",
+        start: "9 June 2024 (third term)",
+        end: "Co-terminous with confidence of the 18th Lok Sabha",
+        appointment: "Appointed",
+        note: "Appointed by the President under Article 75(1) as the leader commanding a majority in the Lok Sabha.",
+        sources: [PMINDIA],
+      },
+    },
+    {
+      id: "com-tiers",
+      label: "Tiers of the Council",
+      sublabel: "Cabinet Ministers · Ministers of State (Independent Charge) · Ministers of State",
+      detail:
+        "Total strength is capped at 15% of the Lok Sabha's membership by Article 75(1A). Portfolios are allocated by the President on the Prime Minister's advice under the Government of India (Allocation of Business) Rules, 1961.",
+      sources: [MHA],
+    },
+    {
+      id: "com-secretariat",
+      label: "Permanent executive — Union civil services",
+      sublabel: "Cabinet Secretary, Secretaries to Government of India, All-India Services",
+      article: "Articles 77, 312",
+      detail:
+        "Executive business of the Union is expressed in the name of the President and transacted through ministries staffed by the permanent civil service, including the All-India Services created under Article 312.",
+      sources: [MHA],
+    },
+  ],
+};
+
+const stateLevel: TreeNode = {
+  id: "part-vi",
+  label: "Part VI — The States (State level)",
+  article: "Articles 152–237",
+  detail:
+    "Each State mirrors the Union at the sub-national level: a Governor as constitutional head, a Chief Minister and Council of Ministers as the real executive, a legislature, and a High Court.",
+  sources: [MHA],
+  children: [
+    {
+      id: "state-executive",
+      label: "The State Executive",
+      article: "Articles 153–167",
+      children: [
+        {
+          id: "governor",
+          label: "Governor of the State",
+          sublabel: "Constitutional head of the State executive",
+          article: "Articles 153–156",
+          detail:
+            "Appointed by the President, holds office during the President's pleasure for a normal term of five years. Union Territories with legislatures are headed by a Lieutenant Governor or Administrator under Article 239.",
+          member: {
+            name: "Governor (office, State-wise)",
+            title: "Governor of a State — head of the State executive",
+            start: "Five-year term from date of oath",
+            end: "Holds office during the pleasure of the President",
+            appointment: "Appointed",
+            note: "All executive action of the State is taken in the Governor's name; the Governor acts on the aid and advice of the State Council of Ministers except in matters of discretion.",
+            sources: [MHA],
+          },
+        },
+        {
+          id: "chief-minister",
+          label: "Chief Minister and State Council of Ministers",
+          sublabel: "Real executive of the State",
+          article: "Articles 163–164",
+          detail:
+            "The Chief Minister is appointed by the Governor; other ministers are appointed on the Chief Minister's advice. The Council is collectively responsible to the Legislative Assembly.",
+          member: {
+            name: "Chief Minister (office, State-wise)",
+            title: "Chief Minister — head of the State Council of Ministers",
+            start: "On appointment by the Governor after an Assembly election",
+            end: "While commanding the confidence of the Legislative Assembly",
+            appointment: "Appointed",
+            note: "Ministerial strength is capped at 15% of the Assembly's membership (minimum 12) by Article 164(1A).",
+            sources: [MHA],
+          },
+        },
+        {
+          id: "state-services",
+          label: "State Secretariat and services",
+          sublabel: "Chief Secretary, departmental secretaries, district administration",
+          article: "Article 166",
+          detail:
+            "District Collectors and Divisional Commissioners carry State executive authority down to the field level and coordinate with local bodies.",
+          sources: [MHA],
+        },
+      ],
+    },
+    {
+      id: "state-legislature",
+      label: "The State Legislature",
+      article: "Articles 168–212",
+      detail:
+        "Every State has a Legislative Assembly (Vidhan Sabha); six States also have a Legislative Council (Vidhan Parishad) under Article 169.",
+      children: [
+        {
+          id: "vidhan-sabha",
+          label: "Legislative Assembly — Vidhan Sabha",
+          sublabel: "Directly elected MLAs, five-year term",
+          article: "Articles 170, 172, 178",
+          detail:
+            "Presided over by a Speaker and Deputy Speaker elected from among the members. MLAs of a State form part of the electoral college for the President and elect that State's Rajya Sabha delegation under Article 80(4).",
+        },
+        {
+          id: "vidhan-parishad",
+          label: "Legislative Council — Vidhan Parishad",
+          sublabel: "Permanent House in Andhra Pradesh, Bihar, Karnataka, Maharashtra, Telangana, Uttar Pradesh",
+          article: "Articles 171, 182",
+          detail:
+            "One-third of members retire every two years. Composed of members elected by local bodies, graduates, teachers and MLAs, plus members nominated by the Governor.",
+        },
+      ],
+    },
+    {
+      id: "state-judiciary",
+      label: "The High Courts",
+      article: "Articles 214–231",
+      detail:
+        "A High Court for each State (some with common jurisdiction), with judges appointed by the President; subordinate district courts fall under Articles 233–237.",
+    },
+  ],
+};
+
+const localGovernment: TreeNode = {
+  id: "local-government",
+  label: "Parts IX & IX-A — Local Government (Third tier)",
+  article: "Articles 243–243ZG",
+  detail:
+    "The 73rd and 74th Constitutional Amendments (1992) created constitutionally mandated rural and urban self-government, with five-year terms, State Election Commissions and State Finance Commissions.",
+  sources: [PANCHAYATI_RAJ, MOHUA],
+  children: [
+    {
+      id: "panchayati-raj",
+      label: "Part IX — Panchayats (rural)",
+      article: "Articles 243–243O",
+      detail:
+        "A three-tier structure in States with population above twenty lakh. Seats are reserved for Scheduled Castes, Scheduled Tribes and women (not less than one-third).",
+      sources: [PANCHAYATI_RAJ],
+      children: [
+        {
+          id: "zila-parishad",
+          label: "Zila Parishad — District Panchayat",
+          sublabel: "District level",
+          article: "Article 243B",
+          detail: "Headed by an elected Adhyaksha/President; coordinates block plans and district development schemes.",
+        },
+        {
+          id: "panchayat-samiti",
+          label: "Panchayat Samiti — Block / Intermediate Panchayat",
+          sublabel: "Intermediate level",
+          article: "Article 243B",
+          detail: "Links village panchayats to the district body; chaired by an elected Pradhan/Chairperson.",
+        },
+        {
+          id: "gram-panchayat",
+          label: "Gram Panchayat and Gram Sabha",
+          sublabel: "Village level — the base of the pyramid",
+          article: "Articles 243A, 243B",
+          detail:
+            "The Gram Sabha is the assembly of all registered voters of the village; the Gram Panchayat is headed by an elected Sarpanch/Pradhan with elected ward members.",
+        },
+      ],
+    },
+    {
+      id: "urban-local-bodies",
+      label: "Part IX-A — Municipalities (urban)",
+      article: "Articles 243P–243ZG",
+      sources: [MOHUA],
+      children: [
+        {
+          id: "nagar-nigam",
+          label: "Municipal Corporation — Nagar Nigam",
+          sublabel: "Larger urban areas",
+          article: "Article 243Q(1)(c)",
+          detail: "Elected Mayor and councillors with a Municipal Commissioner as executive head.",
+        },
+        {
+          id: "nagar-palika",
+          label: "Municipal Council — Nagar Palika",
+          sublabel: "Smaller urban areas",
+          article: "Article 243Q(1)(b)",
+          detail: "Elected Chairperson and ward councillors.",
+        },
+        {
+          id: "nagar-panchayat",
+          label: "Nagar Panchayat",
+          sublabel: "Transitional areas moving from rural to urban",
+          article: "Article 243Q(1)(a)",
+        },
+        {
+          id: "urban-committees",
+          label: "Ward, District Planning and Metropolitan Planning Committees",
+          article: "Articles 243S, 243ZD, 243ZE",
+          detail:
+            "Statutory committees that consolidate panchayat and municipal plans into district and metropolitan development plans.",
+        },
+      ],
+    },
+  ],
+};
+
 export const constitutionTree: TreeNode = {
+
   id: "constitution",
   label: "Constitution of India",
   sublabel: "Supreme law — in force since 26 January 1950",
