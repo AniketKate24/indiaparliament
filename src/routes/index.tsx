@@ -128,12 +128,15 @@ function Directory() {
 
   return (
     <main className="min-h-screen bg-background font-sans text-foreground">
+      <div className="tricolor-band h-2 w-full" aria-hidden />
       <header className="border-b border-border bg-primary text-primary-foreground">
         <div className="mx-auto max-w-6xl px-6 py-14">
           <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-primary-foreground/70">
+            <span className="chakra-ring h-5 w-5 shrink-0" aria-hidden />
             <span className="h-px w-10 bg-saffron" />
             Sansad Bhavan · New Delhi
           </div>
+
           <h1 className="mt-5 max-w-3xl font-display text-4xl leading-tight font-semibold sm:text-5xl">
             Parliamentary Board Directory of India
           </h1>
