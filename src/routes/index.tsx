@@ -9,17 +9,17 @@ import { UpdateLog } from "@/components/directory/UpdateLog";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Indian Parliamentary Board Directory — Lok Sabha & Rajya Sabha" },
+      { title: "Parliament of India Directory — Lok Sabha & Rajya Sabha" },
       {
         name: "description",
         content:
-          "Sourced directory of India's parliamentary leadership: Speaker, Chairman, floor leaders, whips and committee chairs with tenures, citations, an update log and an expandable org tree.",
+          "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
       },
-      { property: "og:title", content: "Indian Parliamentary Board Directory" },
+      { property: "og:title", content: "Parliament of India Directory — Lok Sabha & Rajya Sabha" },
       {
         property: "og:description",
         content:
-          "Lok Sabha, Rajya Sabha and joint committee office-bearers with tenure dates, official vs press citations, change log and tree view.",
+          "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
