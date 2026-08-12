@@ -179,3 +179,63 @@
   background:
     repeating-conic-gradient(currentColor 0deg 1.5deg, transparent 1.5deg 15deg);
 }
+
+/* ---------------------------------------------------------------
+ * Tiranga theme extensions
+ * Flag colours: saffron #FF9933 · white #FFFFFF · India green #138808
+ * Ashoka Chakra navy #000080 (accent only — never a full flag render)
+ * --------------------------------------------------------------- */
+
+:root {
+  /* Opacity variants for overlays, hovers, tints */
+  --saffron-12: oklch(0.76 0.16 60 / 0.12);
+  --saffron-24: oklch(0.76 0.16 60 / 0.24);
+  --saffron-60: oklch(0.76 0.16 60 / 0.6);
+  --verdant-12: oklch(0.52 0.17 143 / 0.12);
+  --verdant-24: oklch(0.52 0.17 143 / 0.24);
+  --verdant-60: oklch(0.52 0.17 143 / 0.6);
+  --chakra-12: oklch(0.24 0.14 279 / 0.12);
+  --chakra-24: oklch(0.24 0.14 279 / 0.24);
+  --chakra-70: oklch(0.24 0.14 279 / 0.7);
+  /* AA-safe text-on-white variants of saffron & green */
+  --saffron-text: oklch(0.48 0.13 55);
+  --verdant-text: oklch(0.42 0.14 143);
+}
+
+@theme inline {
+  --color-saffron-text: var(--saffron-text);
+  --color-verdant-text: var(--verdant-text);
+}
+
+@utility tricolor-rule {
+  height: 3px;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    var(--saffron) 0 33.333%,
+    var(--rule) 33.333% 66.666%,
+    var(--verdant) 66.666% 100%
+  );
+}
+
+@utility tricolor-wash {
+  background:
+    linear-gradient(to bottom, var(--saffron-12), transparent 38%),
+    linear-gradient(to top, var(--verdant-12), transparent 38%);
+}
+
+@utility chakra-spin {
+  animation: chakra-turn 6s linear infinite;
+}
+
+@keyframes chakra-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chakra-spin {
+    animation: none;
+  }
+}
