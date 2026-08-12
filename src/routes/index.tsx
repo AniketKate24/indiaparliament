@@ -152,11 +152,18 @@ function Directory() {
             <span className="h-px w-10 bg-saffron" />
             Sansad Bhavan · New Delhi
             <Link
-              to="/theme"
+              to="/rajya-sabha"
               className="ml-auto rounded-md border border-primary-foreground/25 px-3 py-1.5 tracking-normal normal-case hover:bg-primary-foreground/10"
+            >
+              Rajya Sabha members list
+            </Link>
+            <Link
+              to="/theme"
+              className="rounded-md border border-primary-foreground/25 px-3 py-1.5 tracking-normal normal-case hover:bg-primary-foreground/10"
             >
               Tiranga theme spec
             </Link>
+
           </div>
 
           <h1 className="mt-5 max-w-3xl font-display text-4xl leading-tight font-semibold sm:text-5xl">
