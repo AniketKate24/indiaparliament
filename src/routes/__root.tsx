@@ -84,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
       },
       { name: "author", content: "Lovable" },
+      {
+        name: "google-site-verification",
+        content: "JWOdsGIA_8P38VP96FO5bUbbx5LWLteQ0XXnwC3N0UI",
+      },
       { property: "og:title", content: "Parliament of India Directory — Lok Sabha & Rajya Sabha" },
       {
         property: "og:description",
