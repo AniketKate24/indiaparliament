@@ -107,7 +107,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
-
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              name: "Parliament of India Directory",
+              url: "https://indian-parliament.lovable.app/",
+              description:
+                "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
+            },
+            {
+              "@type": "Organization",
+              name: "Parliament of India Directory",
+              url: "https://indian-parliament.lovable.app/",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
