@@ -22,7 +22,23 @@ export const Route = createFileRoute("/")({
           "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://indian-parliament.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://indian-parliament.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Parliament of India Directory — Lok Sabha & Rajya Sabha",
+          description:
+            "Current Lok Sabha and Rajya Sabha office-bearers with tenure dates, cited sources, an update log and an expandable constitutional org tree.",
+          url: "https://indian-parliament.lovable.app/",
+          about: { "@type": "GovernmentOrganization", name: "Parliament of India" },
+        }),
+      },
     ],
   }),
   component: Directory,
@@ -186,6 +202,8 @@ function Directory() {
           </div>
           {tab === "directory" && (
             <input
+              type="search"
+              aria-label="Search members by name, role or party"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search name, role or party…"

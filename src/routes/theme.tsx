@@ -8,16 +8,30 @@ export const Route = createFileRoute("/theme")({
       {
         name: "description",
         content:
-          "Tiranga design system for the Parliament of India Directory: saffron, white, India green and Ashoka Chakra navy tokens, typography, components and accessibility ratios.",
+          "Tiranga design system: saffron, white, India green and Ashoka Chakra navy tokens, typography, components and accessibility contrast ratios.",
       },
       { property: "og:title", content: "Tiranga Theme — Parliament of India Directory" },
       {
         property: "og:description",
         content:
-          "CSS custom properties, component snippets, contrast tables and cultural guidance for an Indian flag themed website.",
+          "Tiranga design system: saffron, white, India green and Ashoka Chakra navy tokens, typography, components and accessibility contrast ratios.",
       },
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://indian-parliament.lovable.app/theme" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: "Tiranga Theme — Parliament of India Directory",
+          description:
+            "Tiranga design system: saffron, white, India green and Ashoka Chakra navy tokens, typography, components and accessibility contrast ratios.",
+          url: "https://indian-parliament.lovable.app/theme",
+        }),
+      },
     ],
   }),
   component: ThemeSpec,
