@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { AS_OF, bodies, changes, type Member } from "@/data/parliament";
 import { updateLog } from "@/data/updateLog";
