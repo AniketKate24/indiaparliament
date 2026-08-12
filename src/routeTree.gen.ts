@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CommitteesRouteImport } from './routes/committees'
+import { Route as LokSabhaRouteImport } from './routes/lok-sabha'
 import { Route as RajyaSabhaRouteImport } from './routes/rajya-sabha'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommitteesRoute = CommitteesRouteImport.update({
+  id: '/committees',
+  path: '/committees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LokSabhaRoute = LokSabhaRouteImport.update({
+  id: '/lok-sabha',
+  path: '/lok-sabha',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RajyaSabhaRoute = RajyaSabhaRouteImport.update({
@@ -25,27 +37,35 @@ const RajyaSabhaRoute = RajyaSabhaRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/committees': typeof CommitteesRoute
+  '/lok-sabha': typeof LokSabhaRoute
   '/rajya-sabha': typeof RajyaSabhaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/committees': typeof CommitteesRoute
+  '/lok-sabha': typeof LokSabhaRoute
   '/rajya-sabha': typeof RajyaSabhaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/committees': typeof CommitteesRoute
+  '/lok-sabha': typeof LokSabhaRoute
   '/rajya-sabha': typeof RajyaSabhaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/rajya-sabha'
+  fullPaths: '/' | '/committees' | '/lok-sabha' | '/rajya-sabha'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/rajya-sabha'
-  id: '__root__' | '/' | '/rajya-sabha'
+  to: '/' | '/committees' | '/lok-sabha' | '/rajya-sabha'
+  id: '__root__' | '/' | '/committees' | '/lok-sabha' | '/rajya-sabha'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CommitteesRoute: typeof CommitteesRoute
+  LokSabhaRoute: typeof LokSabhaRoute
   RajyaSabhaRoute: typeof RajyaSabhaRoute
 }
 
@@ -56,6 +76,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/committees': {
+      id: '/committees'
+      path: '/committees'
+      fullPath: '/committees'
+      preLoaderRoute: typeof CommitteesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lok-sabha': {
+      id: '/lok-sabha'
+      path: '/lok-sabha'
+      fullPath: '/lok-sabha'
+      preLoaderRoute: typeof LokSabhaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rajya-sabha': {
@@ -70,18 +104,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CommitteesRoute: CommitteesRoute,
+  LokSabhaRoute: LokSabhaRoute,
   RajyaSabhaRoute: RajyaSabhaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

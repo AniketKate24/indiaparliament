@@ -151,12 +151,22 @@ function Directory() {
             <span className="chakra-ring h-5 w-5 shrink-0" aria-hidden />
             <span className="h-px w-10 bg-saffron" />
             Sansad Bhavan · New Delhi
-            <Link
-              to="/rajya-sabha"
-              className="ml-auto rounded-md border border-primary-foreground/25 px-3 py-1.5 tracking-normal normal-case hover:bg-primary-foreground/10"
-            >
-              Rajya Sabha members list
-            </Link>
+            <div className="ml-auto flex flex-wrap gap-2">
+              {[
+                { to: "/lok-sabha", label: "Lok Sabha members" },
+                { to: "/rajya-sabha", label: "Rajya Sabha members" },
+                { to: "/committees", label: "Committees" },
+              ].map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="rounded-md border border-primary-foreground/25 px-3 py-1.5 tracking-normal normal-case hover:bg-primary-foreground/10"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+
 
 
           </div>
