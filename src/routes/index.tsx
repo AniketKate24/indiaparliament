@@ -157,12 +157,7 @@ function Directory() {
             >
               Rajya Sabha members list
             </Link>
-            <Link
-              to="/theme"
-              className="rounded-md border border-primary-foreground/25 px-3 py-1.5 tracking-normal normal-case hover:bg-primary-foreground/10"
-            >
-              Tiranga theme spec
-            </Link>
+
 
           </div>
 
