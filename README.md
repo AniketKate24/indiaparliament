@@ -1,6 +1,7 @@
 # India Parliament Directory
 
 Create a comprehensive parliamentary board directory for India that maps all current members with their complete details. For each member, include: their full legal name as officially recorded, their precise title and designation (e.g., Speaker, Deputy Speaker, Leader of the House, Leader of the Opposition, Whip, Committee Chairperson, or any other official parliamentary role), and the exact duration of their tenure in their current position (start date and, where applicable, expected or actual end date). Organize the information by parliamentary body—specifically the Lok Sabha (Lower House), the Rajya Sabha (Upper House), and any joint parliamentary committees or special boards. Within each body, further categorize members by their functional role or committee assignment for clarity. Indicate whether each position is elected, nominated, or appointed, and note any recent changes, vacancies, or upcoming rotations in membership.
+
 This project was built with [Lovable](https://lovable.dev).
 
 **Live app**: https://indiaparliament.lovable.app
