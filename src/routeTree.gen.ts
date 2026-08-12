@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RajyaSabhaRouteImport } from './routes/rajya-sabha'
 import { Route as ThemeRouteImport } from './routes/theme'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RajyaSabhaRoute = RajyaSabhaRouteImport.update({
+  id: '/rajya-sabha',
+  path: '/rajya-sabha',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThemeRoute = ThemeRouteImport.update({
@@ -25,27 +31,31 @@ const ThemeRoute = ThemeRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/rajya-sabha': typeof RajyaSabhaRoute
   '/theme': typeof ThemeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/rajya-sabha': typeof RajyaSabhaRoute
   '/theme': typeof ThemeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/rajya-sabha': typeof RajyaSabhaRoute
   '/theme': typeof ThemeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/theme'
+  fullPaths: '/' | '/rajya-sabha' | '/theme'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/theme'
-  id: '__root__' | '/' | '/theme'
+  to: '/' | '/rajya-sabha' | '/theme'
+  id: '__root__' | '/' | '/rajya-sabha' | '/theme'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RajyaSabhaRoute: typeof RajyaSabhaRoute
   ThemeRoute: typeof ThemeRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rajya-sabha': {
+      id: '/rajya-sabha'
+      path: '/rajya-sabha'
+      fullPath: '/rajya-sabha'
+      preLoaderRoute: typeof RajyaSabhaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/theme': {
@@ -70,18 +87,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RajyaSabhaRoute: RajyaSabhaRoute,
   ThemeRoute: ThemeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
